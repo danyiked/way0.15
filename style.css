@@ -1,0 +1,249 @@
+                /*CSS VARIABLE*/
+                
+                 :root {
+                    --primary: #ddd;
+                    --dark: #333;
+                    --light: #fff;
+                    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+                }
+                
+                html {
+                    box-sizing: border-box;
+                    font-family: Arial, Helvetica, sans-serif;
+                    color: var(--dark);
+                }
+                
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                }
+                
+                a:hover {
+                    color: #ccc;
+                }
+                
+                body {
+                    background: #ccc;
+                    margin: 30px 50px;
+                    line-height: 1.5;
+                }
+                
+                .btn {
+                    background: var(--dark);
+                    color: var(--light);
+                    padding: 0.6rem 1.3rem;
+                    text-decoration: none;
+                    border: 0;
+                    transition: 0.6s;
+                    width: fit-content;
+                }
+                
+                .btn:hover {
+                    background: var(--light);
+                    color: #111;
+                    letter-spacing: 5px;
+                }
+                
+                img {
+                    max-width: 100%;
+                }
+                
+                video {
+                    max-width: 100%;
+                }
+                
+                .wrapper {
+                    display: grid;
+                    grid-gap: 1.3em;
+                }
+                /*Navigstion*/
+                
+                .main-nav ul {
+                    display: grid;
+                    grid-gap: 1.3em;
+                    padding: 0;
+                    list-style: none;
+                    margin: 0;
+                    grid-template-columns: repeat(4, 1fr);
+                }
+                
+                .main-nav li a {
+                    text-decoration: none;
+                    background: var(--primary);
+                    display: block;
+                    text-align: center;
+                    text-transform: uppercase;
+                    padding: 0.8rem;
+                    color: var(--dark);
+                    font-size: 1.1rem;
+                    box-shadow: var(--shadow);
+                    transition: 0.5s;
+                }
+                
+                .main-nav li a:hover {
+                    background: var(--dark);
+                    color: var(--light);
+                    text-decoration: underline;
+                    transform: scale(1) translateY(-5px);
+                }
+                /* top conttainer */
+                
+                .top-container {
+                    display: grid;
+                    grid-gap: 1.3em;
+                    grid-template-areas: 'showcase showcase top-box-a' 'showcase showcase top-box-b';
+                    /*grid-template-columns: repeat(3, 1fr);*/
+                }
+                /* showcase */
+                
+                .showcase {
+                    display: grid;
+                    grid-area: showcase;
+                    min-height: 400px;
+                    /* background: url(image/422.jpg);*/
+                    /* background-size: cover;
+     background-position: center; */
+                    background-size: cover;
+                    background-position: center;
+                    background: rgb(162, 162, 255);
+                    padding: 3rem;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: center;
+                    box-shadow: var(--shadow);
+                }
+                
+                .showcase video {
+                    grid-area: showcase;
+                    opacity: 1;
+                    width: 100%;
+                }
+                
+                .showcase h1 {
+                    font-size: 4rem;
+                    margin-bottom: 0%;
+                    color: #111;
+                    z-index: 10;
+                }
+                
+                .showcase p {
+                    font-size: 1.3rem;
+                    margin-top: 0;
+                    color: #111;
+                    z-index: 10;
+                }
+                
+                .showcase a {
+                    z-index: 10;
+                }
+                /* Top Box */
+                
+                .top-box {
+                    background: var(--primary);
+                    display: grid;
+                    align-items: center;
+                    justify-items: center;
+                    box-shadow: var(--shadow);
+                    padding: 1.5rem;
+                }
+                
+                .top-box .price {
+                    font-size: 2.5rem;
+                }
+                
+                .top-box-a {
+                    grid-area: top-box-a;
+                }
+                
+                .top-box-b {
+                    grid-area: top-box-b;
+                }
+                /* boxes */
+                
+                .boxes {
+                    display: grid;
+                    grid-gap: 1.3rem;
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                }
+                
+                .b0x {
+                    color: var(--dark);
+                    /* background: var(--primary); */
+                    text-align: center;
+                    padding: 1.5rem;
+                    box-shadow: var(--shadow);
+                }
+                
+                .boxes:nth-last-child() {
+                    background-color: rgb(162, 162, 255);
+                }
+                /* Info */
+                
+                .info {
+                    background: var(--primary);
+                    box-shadow: var(--shadow);
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit);
+                    grid-gap: 1.8rem;
+                    padding: 3rem;
+                }
+                /* Portfolio */
+                
+                .portfolio {
+                    display: grid;
+                    grid-gap: 1.3rem;
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                }
+                
+                .portfolio img {
+                    width: 100%;
+                }
+                
+                .portfolio a {
+                    transition: 0.5s;
+                }
+                
+                .portfolio a:hover {
+                    transform: scale(1) translateY(-5px);
+                }
+                /* Footer */
+                
+                footer {
+                    margin-top: 2rem;
+                    background: var(--dark);
+                    color: var(--light);
+                    text-align: center;
+                    padding: 1rem;
+                }
+                /* Media Queries */
+                
+                @media (max-width: 700px) {
+                    .top-container {
+                        grid-template-areas: 'showcase showcase' 'top-box-a top-box-b';
+                    }
+                    .showcase h1 {
+                        font-size: 2.5rem;
+                    }
+                }
+                
+                .info {
+                    grid-template-columns: 1fr;
+                }
+                
+                .info .btn {
+                    display: block;
+                    text-align: center;
+                    margin: auto;
+                }
+                
+                .main-nav ul {
+                    grid-template-columns: 1fr;
+                    flex-direction: column;
+                }
+                
+                @media (max-width: 450px) {
+                    .top-container {
+                        grid-template-areas: ' showcase' 'top-box-a ' 'top-box-b';
+                    }
+                }
